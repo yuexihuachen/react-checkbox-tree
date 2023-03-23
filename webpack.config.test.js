@@ -3,6 +3,7 @@ const path = require('node:path');
 
 module.exports = {
     mode: 'development',
+    devtool: 'source-map',
     output: {
         path: path.join(__dirname, 'examples/dist'),
         library: {

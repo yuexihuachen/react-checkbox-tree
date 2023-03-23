@@ -256,6 +256,7 @@ class CheckboxTree extends React.Component {
 
             return (
                 <TreeNode
+                    nodes={nodes}   // New add data
                     key={key}
                     checked={flatNode.checkState}
                     className={node.className}
@@ -268,6 +269,7 @@ class CheckboxTree extends React.Component {
                     isLeaf={flatNode.isLeaf}
                     isParent={flatNode.isParent}
                     label={node.label}
+                    isSelected={!!node.isSelected} // New add data
                     lang={lang}
                     optimisticToggle={optimisticToggle}
                     showCheckbox={showCheckbox}
@@ -283,7 +285,7 @@ class CheckboxTree extends React.Component {
                 </TreeNode>
             );
         });
-
+        
         return (
             <ol>
                 {treeNodes}

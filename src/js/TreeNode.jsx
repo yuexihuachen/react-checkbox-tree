@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import Button from './Button';
 import NativeCheckbox from './NativeCheckbox';
 import iconsShape from './shapes/iconsShape';
@@ -124,7 +123,7 @@ class TreeNode extends React.PureComponent {
     }
 
     renderCollapseButton() {
-        const { expandDisabled, isLeaf, lang } = this.props;
+        const { expandDisabled, isLeaf, lang, label } = this.props;
 
         if (isLeaf) {
             return (
@@ -146,9 +145,27 @@ class TreeNode extends React.PureComponent {
         );
     }
 
-    renderCollapseIcon() {
-        const { expanded, icons: { expandClose, expandOpen } } = this.props;
+    breadthQuery(tree, value) {
+        let stark = [];
+    
+        stark = stark.concat(tree);
+    
+        while(stark.length) {
+            let temp = stark.shift();
+            if(temp.children) {
+                stark = stark.concat(temp.children);
+            }
+            if(temp.value === value) {
+                return temp;
+            }
+        }
+    }
 
+    renderCollapseIcon() {
+        const { expanded, value, isSelected, nodes, icons: { expandClose, expandOpen, loadingIcon } } = this.props;
+        if (!this.breadthQuery(nodes, value).children.length && isSelected ) {
+            return loadingIcon
+        }
         if (!expanded) {
             return expandClose;
         }
@@ -196,9 +213,9 @@ class TreeNode extends React.PureComponent {
     renderBareLabel(children) {
         const { onClick, title } = this.props;
         const clickable = onClick !== null;
-
+        
         return (
-            <span className="rct-bare-label" title={title}>
+            <span onClick={this.onExpand} className="rct-bare-label" title={title}>
                 {clickable ? (
                     <span
                         className="rct-node-clickable"
@@ -271,14 +288,14 @@ class TreeNode extends React.PureComponent {
     }
 
     renderLabel() {
-        const { label, showCheckbox, showNodeIcon } = this.props;
+        const { label, isSelected, showCheckbox, showNodeIcon } = this.props;
         const labelChildren = [
             showNodeIcon ? (
                 <span key={0} className="rct-node-icon">
                     {this.renderNodeIcon()}
                 </span>
             ) : null,
-            <span key={1} className="rct-title">
+            <span key={1} className={`rct-title ${isSelected?"checked-title":""}`}>
                 {label}
             </span>,
         ];
@@ -306,6 +323,7 @@ class TreeNode extends React.PureComponent {
             disabled,
             expanded,
             isLeaf,
+            isSelected
         } = this.props;
         const nodeClass = classNames({
             'rct-node': true,
@@ -318,7 +336,7 @@ class TreeNode extends React.PureComponent {
 
         return (
             <li className={nodeClass}>
-                <span className="rct-text">
+                <span className={`rct-text ${isSelected?"checked-title":""}`}>
                     {this.renderCollapseButton()}
                     {this.renderLabel()}
                 </span>
