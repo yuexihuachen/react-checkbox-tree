@@ -1,5 +1,7 @@
 # react-checkbox-tree
 
+### Based on the secondary development of react-checkbox-tree, some functions have been added and some functions have been modified based on the needs of the company.
+
 [![npm](https://img.shields.io/npm/v/react-checkbox-tree.svg?style=flat-square)](https://www.npmjs.com/package/react-checkbox-tree)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/jakezatecky/react-checkbox-tree/main.yml?branch=master&style=flat-square)](https://github.com/jakezatecky/react-checkbox-tree/actions/workflows/main.yml)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/jakezatecky/react-checkbox-tree/master/LICENSE.txt)
