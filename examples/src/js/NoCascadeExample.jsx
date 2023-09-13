@@ -5,16 +5,18 @@ import { fileSystem as nodes } from './common';
 
 function NoCascadeExample() {
     const [checked, setChecked] = useState([
-        '/app/Http/Controllers/WelcomeController.js',
-        '/app/Http/routes.js',
-        '/public/assets/style.css',
-        '/public/index.html',
-        '/.gitignore',
+        '/app'
     ]);
     const [expanded, setExpanded] = useState([
         '/app',
         '/app/Http',
     ]);
+
+    const [clicked, setClicked] = useState({});
+
+    const onClick = (value) => {
+        setClicked(value);
+    };
 
     const onCheck = (value) => {
         setChecked(value);
@@ -28,8 +30,10 @@ function NoCascadeExample() {
         <CheckboxTree
             checked={checked}
             expanded={expanded}
+            expandOnClick
             noCascade
             nodes={nodes}
+            onClick={onClick}
             onCheck={onCheck}
             onExpand={onExpand}
         />

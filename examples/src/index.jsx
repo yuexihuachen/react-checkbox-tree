@@ -11,14 +11,19 @@ import NoCascadeExample from './js/NoCascadeExample';
 import LargeDataExample from './js/LargeDataExample';
 import PessimisticToggleExample from './js/PessimisticToggleExample';
 import FilterExample from './js/FilterExample';
+import CustomerExample from './js/CustomerExample';
+
 
 createRoot(document.getElementById('basic-example')).render(<BasicExample />);
-createRoot(document.getElementById('custom-icons-example')).render(<CustomIconsExample />);
-createRoot(document.getElementById('disabled-example')).render(<DisabledExample />);
-createRoot(document.getElementById('no-cascade-example')).render(<NoCascadeExample />);
-createRoot(document.getElementById('pessimistic-toggle-example')).render(<PessimisticToggleExample />);
-createRoot(document.getElementById('clickable-labels-example')).render(<ClickableLabelsExample />);
-createRoot(document.getElementById('hidden-checkboxes-example')).render(<HiddenCheckboxesExample />);
-createRoot(document.getElementById('expand-all-example')).render(<ExpandAllExample />);
-createRoot(document.getElementById('large-data-example')).render(<LargeDataExample />);
-createRoot(document.getElementById('filter-example')).render(<FilterExample />);
+// createRoot(document.getElementById('custom-icons-example')).render(<CustomIconsExample />);
+// createRoot(document.getElementById('disabled-example')).render(<DisabledExample />);
+// createRoot(document.getElementById('no-cascade-example')).render(<NoCascadeExample />);
+// createRoot(document.getElementById('pessimistic-toggle-example')).render(<PessimisticToggleExample />);
+// createRoot(document.getElementById('clickable-labels-example')).render(<ClickableLabelsExample />);
+// createRoot(document.getElementById('hidden-checkboxes-example')).render(<HiddenCheckboxesExample />);
+// createRoot(document.getElementById('expand-all-example')).render(<ExpandAllExample />);
+// createRoot(document.getElementById('large-data-example')).render(<LargeDataExample />);
+// createRoot(document.getElementById('filter-example')).render(<FilterExample />);
+
+createRoot(document.getElementById('customer-example')).render(<CustomerExample />);
+

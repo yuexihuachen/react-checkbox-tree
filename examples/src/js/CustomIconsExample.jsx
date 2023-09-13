@@ -3,7 +3,7 @@ import CheckboxTree from 'react-checkbox-tree';
 
 const nodes = [
     {
-        value: 'Documents',
+        value: 'documents',
         label: 'Documents',
         children: [
             {

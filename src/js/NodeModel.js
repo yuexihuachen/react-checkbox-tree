@@ -52,7 +52,6 @@ class NodeModel {
             this.flatNodes[node.value] = {
                 label: node.label,
                 value: node.value,
-                isSelected: !!node.isSelected,
                 children: node.children,
                 parent,
                 isChild: parent.value !== undefined,
@@ -84,8 +83,8 @@ class NodeModel {
     }
 
     deserializeLists(lists) {
-        const listKeys = ['checked', 'expanded'];
-
+        const listKeys = ['checked', 'expanded', 'loading'];
+        console.log(this.flatNodes)
         // Reset values to false
         Object.keys(this.flatNodes).forEach((value) => {
             listKeys.forEach((listKey) => {
@@ -97,10 +96,17 @@ class NodeModel {
         listKeys.forEach((listKey) => {
             lists[listKey].forEach((value) => {
                 if (this.flatNodes[value] !== undefined) {
-                    this.flatNodes[value][listKey] = true;
+                    let flag = true
+                    if (Object.is(listKey, 'loading') && this.flatNodes[value]?.children?.length) {
+                        flag = false
+                    } else {
+                        flag = true
+                    }
+                    this.flatNodes[value][listKey] = flag;
                 }
             });
         });
+        
     }
 
     serializeList(key) {

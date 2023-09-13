@@ -3,7 +3,6 @@ const path = require('node:path');
 
 module.exports = {
     mode: 'development',
-    devtool: 'source-map',
     output: {
         path: path.join(__dirname, 'examples/dist'),
         library: {
@@ -11,6 +10,7 @@ module.exports = {
             type: 'umd',
         },
     },
+    devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {

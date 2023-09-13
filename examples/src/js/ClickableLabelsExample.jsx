@@ -5,11 +5,7 @@ import { fileSystem as nodes } from './common';
 
 function ClickExample() {
     const [checked, setChecked] = useState([
-        '/app/Http/Controllers/WelcomeController.js',
-        '/app/Http/routes.js',
-        '/public/assets/style.css',
-        '/public/index.html',
-        '/.gitignore',
+        '/app'
     ]);
     const [expanded, setExpanded] = useState(['/app']);
     const [clicked, setClicked] = useState({});

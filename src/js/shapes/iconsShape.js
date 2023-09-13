@@ -6,6 +6,7 @@ const icons = PropTypes.shape({
     halfCheck: PropTypes.node,
     expandClose: PropTypes.node,
     expandOpen: PropTypes.node,
+    loading: PropTypes.node,
     expandAll: PropTypes.node,
     collapseAll: PropTypes.node,
     parentClose: PropTypes.node,

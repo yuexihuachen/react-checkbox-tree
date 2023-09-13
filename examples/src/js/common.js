@@ -7,20 +7,74 @@ const fileSystem = [
                 value: '/app/Http',
                 label: 'Http',
                 children: [
+                    {
+                        value: '/app/Http/Controllers',
+                        label: 'Controllers',
+                        children: [{
+                            value: '/app/Http/Controllers/WelcomeController.js',
+                            label: 'WelcomeController.js',
+                        }],
+                    },
+                    {
+                        value: '/app/Http/routes.js',
+                        label: 'routes.js',
+                    },
                 ],
             },
             {
                 value: '/app/Providers',
                 label: 'Providers',
-                children: [],
-            },
-            {
-                value: '/app/datas',
-                label: 'datas',
-                children: [{isSelected: true ,"value": "60al3emb4bx", "label": "d5g3x0nce2" }, { "value": "tuxizgxtoyo", "label": "mgox3t8exln" }, { "value": "tn7vi4oc0ln", "label": "kf9lj5qe3hp" }, { "value": "x8610bwqt8l", "label": "mu9i3mqkzv" }, { "value": "bir934nmkv7", "label": "6bceag5qqas" }, { "value": "uqzm8yh9sn", "label": "0jvzv3o3tup6" }, { "value": "mo6jqakssmk", "label": "gpaxpi81l4q" }, { "value": "ze1u5fz867l", "label": "v8moromll6o" }, { "value": "9jcxs0ho9gg", "label": "69y5ewma79" }, { "value": "lbg4lf3p3n", "label": "uffvij788i8" }, { "value": "tizbpohfsm", "label": "d6mffouwmgr" }, { "value": "i0k610qyr7j", "label": "duq8yf16mb" }, { "value": "hga9i7teaj", "label": "hyk5dcamnh" }, { "value": "23r7575y5iu", "label": "0ri2agzi3hfq" }, { "value": "gfpaeomwz9o", "label": "cja9oryl33" }, { "value": "1tuvahlhs5w", "label": "fkk287uhiu" }, { "value": "jybms2a5m5", "label": "3v1jfpwa28m" }, { "value": "7va3061bgre", "label": "fodet8yn168" }, { "value": "p4a2e6pm9fq", "label": "zrccknkpwun" }, { "value": "f6vlm1pv7s", "label": "71agkf3xqgc" }, { "value": "0orh9noy2xa", "label": "ykb1e2gogvj" }, { "value": "huuyzzfybt", "label": "ru4ywy2dtdo" }, { "value": "irzxkoli8g", "label": "8v7q3rlk6d" }, { "value": "ai1560xazjo", "label": "goufob2gtou" }, { "value": "l11y51dr25", "label": "adprlrersr" }, { "value": "14fmh3ruh32", "label": "otorj07spvb" }, { "value": "bdhhc5m6yt", "label": "4tu7vnt76sj" }, { "value": "zo5dykj9hpl", "label": "yfl3z05p7d" }, { "value": "4uv3myq8thw", "label": "6bwwjlycwcd" }, { "value": "vf9grg3arhm", "label": "phpbw08jw1l" }, { "value": "inpgftzdl0a", "label": "4rjdr6kk25m" }, { "value": "82ybm7hqla", "label": "b7k7rk2c44" }, { "value": "mj6wicw61is", "label": "8r37qlienqv" }, { "value": "br01vggtzza", "label": "whabhkulvz" }, { "value": "441hiztutgl", "label": "18ldrv9uxim" }, { "value": "e4xz0xtn6za", "label": "4iix0zzx5hr" }, { "value": "kyvfdsco6ti", "label": "o3l273t29qa" }, { "value": "qxkoyfitv7j", "label": "tcu0k21fkb" }, { "value": "73mfq32hx0v", "label": "2w78b05235z" }, { "value": "jd7k9oar87", "label": "2l9y2188q0w" }, { "value": "7juipc6otfh", "label": "bnigaz3ze3o" }, { "value": "vt9cyocowvl", "label": "bzltgxglzp" }, { "value": "76vrx3plura", "label": "5ms1o39kfvn" }, { "value": "aaknxxsatr", "label": "7a71x9kma27" }, { "value": "j6qh99d9nlb", "label": "zagvj4kk1n" }, { "value": "clmpx38h7gg", "label": "9ob5wytmhkn" }, { "value": "e4p6vip54c5", "label": "t18mn5exlfm" }, { "value": "ewg8hyeq2t", "label": "t17pwhi82mq" }, { "value": "qgxac6x49pr", "label": "na6m5yowdml" }, { "value": "a8rmp9aji0a", "label": "qn3y0qe8jd" }],
+                children: [{
+                    value: '/app/Providers/EventServiceProvider.js',
+                    label: 'EventServiceProvider.js',
+                }],
             },
         ],
-    }
+    },
+    {
+        value: '/config',
+        label: 'config',
+        children: [
+            {
+                value: '/config/app.js',
+                label: 'app.js',
+            },
+            {
+                value: '/config/database.js',
+                label: 'database.js',
+            },
+        ],
+    },
+    {
+        value: '/public',
+        label: 'public',
+        children: [
+            {
+                value: '/public/assets/',
+                label: 'assets',
+                children: [{
+                    value: '/public/assets/style.css',
+                    label: 'style.css',
+                }],
+            },
+            {
+                value: '/public/index.html',
+                label: 'index.html',
+            },
+        ],
+    },
+    {
+        value: '/.env',
+        label: '.env',
+    },
+    {
+        value: '/.gitignore',
+        label: '.gitignore',
+    },
+    {
+        value: '/README.md',
+        label: 'README.md',
+    },
 ];
 const empires = [
     {
@@ -105,7 +159,377 @@ const empires = [
     },
 ];
 
+const customerNodes = [
+    {
+        "id":1,
+        "name":"compliance",
+        "label":"Compliance",
+        "schema":null,
+        "parent_id":1001,
+        "created_at":"2023-03-09T07:26:36.272Z",
+        "updated_at":"2023-03-30T03:10:47.379Z",
+        "description":"Typology: 31 Indicator: 39",
+        "value":1,
+        "children":[
+            {
+                "id":2003,
+                "name":"financial_crime",
+                "label":"Financial crime",
+                "schema":null,
+                "parent_id":1,
+                "created_at":"2023-04-13T02:49:25.027Z",
+                "updated_at":"2023-04-13T02:49:25.027Z",
+                "description":"Typology: 0 Indicator: 0",
+                "value":2003,
+                "children":[
+                    {
+                        "id":2007,
+                        "name":"money_laundering",
+                        "label":"Money laundering",
+                        "schema":null,
+                        "parent_id":2003,
+                        "created_at":"2023-04-13T02:50:04.854Z",
+                        "updated_at":"2023-04-13T02:50:04.854Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2007
+                    },
+                    {
+                        "id":2008,
+                        "name":"fraud",
+                        "label":"Fraud",
+                        "schema":null,
+                        "parent_id":2003,
+                        "created_at":"2023-04-13T02:50:15.689Z",
+                        "updated_at":"2023-04-13T02:50:15.689Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2008
+                    },
+                    {
+                        "id":2009,
+                        "name":"insider_trading",
+                        "label":"Insider trading",
+                        "schema":null,
+                        "parent_id":2003,
+                        "created_at":"2023-04-13T02:50:24.970Z",
+                        "updated_at":"2023-04-13T02:50:24.970Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2009
+                    },
+                    {
+                        "id":2010,
+                        "name":"cybercrime",
+                        "label":"Cybercrime",
+                        "schema":null,
+                        "parent_id":2003,
+                        "created_at":"2023-04-13T02:50:35.813Z",
+                        "updated_at":"2023-04-13T02:50:35.813Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2010
+                    },
+                    {
+                        "id":2011,
+                        "name":"sanctions_evasion",
+                        "label":"Sanctions evasion",
+                        "schema":null,
+                        "parent_id":2003,
+                        "created_at":"2023-04-13T02:50:45.057Z",
+                        "updated_at":"2023-04-13T02:50:45.057Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2011
+                    }
+                ]
+            },
+            {
+                "id":2004,
+                "name":"reputational_risk",
+                "label":"Reputational risk",
+                "schema":null,
+                "parent_id":1,
+                "created_at":"2023-04-13T02:49:35.069Z",
+                "updated_at":"2023-04-13T02:49:35.069Z",
+                "description":"Typology: 25 Indicator: 0",
+                "value":2004,
+                "children":[
+                    {
+                        "id":2012,
+                        "name":"anti_child_exploitation",
+                        "label":"Anti-Child Exploitation",
+                        "schema":null,
+                        "parent_id":2004,
+                        "created_at":"2023-04-13T02:50:54.383Z",
+                        "updated_at":"2023-04-13T02:50:54.383Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2012
+                    },
+                    {
+                        "id":2013,
+                        "name":"offensive_materials",
+                        "label":"Offensive materials",
+                        "schema":null,
+                        "parent_id":2004,
+                        "created_at":"2023-04-13T02:51:05.645Z",
+                        "updated_at":"2023-04-13T02:51:05.645Z",
+                        "description":"Typology: 3 Indicator: 0",
+                        "value":2013
+                    },
+                    {
+                        "id":2014,
+                        "name":"weapons",
+                        "label":"Weapons",
+                        "schema":null,
+                        "parent_id":2004,
+                        "created_at":"2023-04-13T02:51:15.276Z",
+                        "updated_at":"2023-04-13T02:51:15.276Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2014
+                    },
+                    {
+                        "id":2015,
+                        "name":"drugs",
+                        "label":"Drugs",
+                        "schema":null,
+                        "parent_id":2004,
+                        "created_at":"2023-04-13T02:51:26.424Z",
+                        "updated_at":"2023-04-13T02:51:26.424Z",
+                        "description":"Typology: 1 Indicator: 0",
+                        "value":2015
+                    },
+                    {
+                        "id":2016,
+                        "name":"mlm",
+                        "label":"MLM",
+                        "schema":null,
+                        "parent_id":2004,
+                        "created_at":"2023-04-13T02:51:37.635Z",
+                        "updated_at":"2023-04-13T02:51:37.635Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2016
+                    },
+                    {
+                        "id":2017,
+                        "name":"cv19",
+                        "label":"CV-19",
+                        "schema":null,
+                        "parent_id":2004,
+                        "created_at":"2023-04-13T02:51:48.875Z",
+                        "updated_at":"2023-04-13T02:51:48.875Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2017
+                    }
+                ]
+            },
+            {
+                "id":2005,
+                "name":"legal_concerns",
+                "label":"Legal concerns",
+                "schema":null,
+                "parent_id":1,
+                "created_at":"2023-04-13T02:49:45.001Z",
+                "updated_at":"2023-04-13T02:49:45.001Z",
+                "description":"Typology: 1 Indicator: 0",
+                "value":2005,
+                "children":[
+                    {
+                        "id":2018,
+                        "name":"encouraging_illegal_deceptive",
+                        "label":"Encouraging illegal & Deceptive",
+                        "schema":null,
+                        "parent_id":2005,
+                        "created_at":"2023-04-13T02:52:00.032Z",
+                        "updated_at":"2023-04-13T02:52:00.032Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2018
+                    },
+                    {
+                        "id":2019,
+                        "name":"gambling",
+                        "label":"Gambling",
+                        "schema":null,
+                        "parent_id":2005,
+                        "created_at":"2023-04-13T02:52:09.519Z",
+                        "updated_at":"2023-04-13T02:52:09.519Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2019
+                    },
+                    {
+                        "id":2020,
+                        "name":"dating_services",
+                        "label":"Dating services",
+                        "schema":null,
+                        "parent_id":2005,
+                        "created_at":"2023-04-13T02:52:19.021Z",
+                        "updated_at":"2023-04-13T02:52:19.021Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2020
+                    },
+                    {
+                        "id":2021,
+                        "name":"adult",
+                        "label":"Adult",
+                        "schema":null,
+                        "parent_id":2005,
+                        "created_at":"2023-04-13T02:52:28.604Z",
+                        "updated_at":"2023-04-13T02:52:28.604Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2021
+                    },
+                    {
+                        "id":2022,
+                        "name":"medical",
+                        "label":"Medical",
+                        "schema":null,
+                        "parent_id":2005,
+                        "created_at":"2023-04-13T02:52:39.585Z",
+                        "updated_at":"2023-04-13T02:52:39.585Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2022
+                    },
+                    {
+                        "id":2023,
+                        "name":"alcohol",
+                        "label":"Alcohol",
+                        "schema":null,
+                        "parent_id":2005,
+                        "created_at":"2023-04-13T02:52:50.842Z",
+                        "updated_at":"2023-04-13T02:52:50.842Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2023
+                    },
+                    {
+                        "id":2024,
+                        "name":"tobacco_e_cigarettes",
+                        "label":"Tobacco & E-Cigarettes",
+                        "schema":null,
+                        "parent_id":2005,
+                        "created_at":"2023-04-13T02:53:01.813Z",
+                        "updated_at":"2023-04-13T02:53:01.813Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2024
+                    }
+                ]
+            },
+            {
+                "id":2006,
+                "name":"processor_considerations",
+                "label":"Processor considerations",
+                "schema":null,
+                "parent_id":1,
+                "created_at":"2023-04-13T02:49:54.980Z",
+                "updated_at":"2023-04-13T02:49:54.980Z",
+                "description":"Typology: 2 Indicator: 0",
+                "value":2006,
+                "children":[
+                    {
+                        "id":2025,
+                        "name":"file_sharing",
+                        "label":"File sharing",
+                        "schema":null,
+                        "parent_id":2006,
+                        "created_at":"2023-04-13T02:53:12.591Z",
+                        "updated_at":"2023-04-13T02:53:12.591Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2025
+                    },
+                    {
+                        "id":2026,
+                        "name":"intellectual_property_rights",
+                        "label":"Intellectual Property Rights (IP)",
+                        "schema":null,
+                        "parent_id":2006,
+                        "created_at":"2023-04-13T02:53:23.799Z",
+                        "updated_at":"2023-04-13T02:53:23.799Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2026
+                    },
+                    {
+                        "id":2027,
+                        "name":"circumvention_products",
+                        "label":"Circumvention Products",
+                        "schema":null,
+                        "parent_id":2006,
+                        "created_at":"2023-04-13T02:53:33.492Z",
+                        "updated_at":"2023-04-13T02:53:33.492Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2027
+                    },
+                    {
+                        "id":2028,
+                        "name":"event_tickets",
+                        "label":"Event Tickets",
+                        "schema":null,
+                        "parent_id":2006,
+                        "created_at":"2023-04-13T02:53:42.688Z",
+                        "updated_at":"2023-04-13T02:53:42.688Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2028
+                    },
+                    {
+                        "id":2029,
+                        "name":"credit_repair",
+                        "label":"Credit Repair",
+                        "schema":null,
+                        "parent_id":2006,
+                        "created_at":"2023-04-13T02:53:52.298Z",
+                        "updated_at":"2023-04-13T02:53:52.298Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2029
+                    },
+                    {
+                        "id":2030,
+                        "name":"personal_information",
+                        "label":"Personal Information",
+                        "schema":null,
+                        "parent_id":2006,
+                        "created_at":"2023-04-13T02:54:02.007Z",
+                        "updated_at":"2023-04-13T02:54:02.007Z",
+                        "description":"Typology: 0 Indicator: 0",
+                        "value":2030
+                    }
+                ]
+            },
+            {
+                "id":2110,
+                "name":"test",
+                "label":"test",
+                "schema":null,
+                "parent_id":1,
+                "created_at":"2023-04-13T02:49:54.980Z",
+                "updated_at":"2023-04-13T02:49:54.980Z",
+                "value":2110,
+                "children":[
+
+                ]
+            }
+        ]
+    },
+    {
+        "id":2001,
+        "name":"profile",
+        "label":"Profile",
+        "schema":null,
+        "parent_id":1001,
+        "created_at":"2023-04-13T02:49:16.167Z",
+        "updated_at":"2023-04-13T02:49:16.167Z",
+        "description":"Typology: 5 Indicator: 0",
+        "value":2001
+    },
+    {
+        "id":2002,
+        "name":"risk",
+        "label":"Risk",
+        "schema":null,
+        "parent_id":1001,
+        "created_at":"2023-04-13T02:49:20.814Z",
+        "updated_at":"2023-04-13T02:49:20.814Z",
+        "description":"Typology: 4 Indicator: 0",
+        "value":2002
+    }
+]
+
+
+
 export {
     fileSystem,
     empires,
+    customerNodes
 };

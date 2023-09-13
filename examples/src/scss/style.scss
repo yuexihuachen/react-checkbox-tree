@@ -16,10 +16,10 @@ $tree-font-family: "Roboto", sans-serif;
 
 .clickable-labels {
   display: flex;
-
-  > * {
-    width: 50%;
-  }
+  flex-direction: column;
+  // > * {
+  //   width: 50%;
+  // }
 }
 
 .expand-all-container {

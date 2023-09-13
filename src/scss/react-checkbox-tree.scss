@@ -2,8 +2,9 @@ $rct-icon-color: #33c !default;
 $rct-icon-font-family: "Font Awesome 5 Free", "FontAwesome", sans-serif;
 $rct-label-hover: rgba($rct-icon-color, .1) !default;
 $rct-label-active: rgba($rct-icon-color, .15) !default;
-$rct-clickable-hover: rgba($rct-icon-color, .1) !default;
-$rct-clickable-focus: rgba($rct-icon-color, .2) !default;
+// $rct-clickable-hover: rgba($rct-icon-color, .1) !default;
+$rct-clickable-hover: #dbd8d0 !default;
+$rct-clickable-focus: #dbd8d0 !default;
 
 // Force ASCII output until Sass supports it
 // https://github.com/sass/dart-sass/issues/568
@@ -154,16 +155,6 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
   display: none;
 }
 
-.checked-title {
-  background: rgba(51, 51, 204, 0.1);
-}
-
-.rct-node-expanded .rct-node-expanded ol {
-  max-height: 200px;
-  overflow-y: overlay;
-}
-
-
 .rct-node-clickable {
   cursor: pointer;
 
@@ -175,6 +166,11 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
     outline: 0;
     background: $rct-clickable-focus;
   }
+
+  // &:focus {
+  //   outline: 0;
+  //   background: $rct-clickable-focus;
+  // }
 }
 
 .rct-node-icon {
@@ -187,6 +183,10 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
 
 // Font Awesome 4 style
 .rct-icons-fa4 {
+  .rct-icon-loading::before {
+    content: unicode("f3f4");
+  }
+
   .rct-icon-expand-close::before {
     content: unicode("f054");
   }
@@ -231,25 +231,14 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
 
 // Font Awesome 5 style
 .rct-icons-fa5 {
+  .rct-icon-loading::before {
+    font-weight: 900;
+    content: unicode("f3f4");
+  }
+
   .rct-icon-expand-close::before {
     font-weight: 900;
     content: unicode("f054");
-  }
-
-  .rct-icon-caret-down::before {
-    font-weight: 900;
-    content: unicode("f0d7");
-  }
-
-  .rct-icon-caret-right::before {
-    font-weight: 900;
-    content: unicode("f0da");
-  }
-  
-
-  .rct-icon-spinner-third::before {
-    font-weight: 900;
-    content: unicode("f1ce");
   }
 
   .rct-icon-expand-open::before {
@@ -307,13 +296,25 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
   &.rct-icons-fa5 .rct-icon-expand-close::before {
     content: unicode("f053");
   }
-  &.rct-icons-fa5 .rct-icon-caret-down::before {
-    content: unicode("f0d7");
+
+  &.rct-icons-fa4 .rct-icon-loading::before {
+    content: unicode("f3f4");
   }
-  &.rct-icons-fa5 .rct-icon-caret-right::before {
-    content: unicode("f0da");
+
+  &.rct-icons-fa5 .rct-icon-loading::before {
+    content: unicode("f3f4");
   }
-  &.rct-icons-fa5 .rct-icon-spinner-third::before {
-    content: unicode("f1ce");
-  }
+}
+
+// customer
+.rct-expandopen {
+  transform: rotate(90deg);
+}
+
+.rct-checked {
+  background-color: $rct-clickable-hover;
+}
+
+.rct-title,.rct-main-title,.rct-subtitle {
+  display: block;
 }

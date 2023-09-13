@@ -25,6 +25,7 @@ class CheckboxTree extends React.Component {
         expandDisabled: PropTypes.bool,
         expandOnClick: PropTypes.bool,
         expanded: listShape,
+        loading: listShape,
         icons: iconsShape,
         iconsClass: PropTypes.string,
         id: PropTypes.string,
@@ -51,12 +52,14 @@ class CheckboxTree extends React.Component {
         expandDisabled: false,
         expandOnClick: false,
         expanded: [],
+        loading: [],
         icons: {
             check: <span className="rct-icon rct-icon-check" />,
             uncheck: <span className="rct-icon rct-icon-uncheck" />,
             halfCheck: <span className="rct-icon rct-icon-half-check" />,
             expandClose: <span className="rct-icon rct-icon-expand-close" />,
             expandOpen: <span className="rct-icon rct-icon-expand-open" />,
+            loading: <span className="rct-icon rct-icon-loading" />,
             expandAll: <span className="rct-icon rct-icon-expand-all" />,
             collapseAll: <span className="rct-icon rct-icon-collapse-all" />,
             parentClose: <span className="rct-icon rct-icon-parent-close" />,
@@ -92,6 +95,7 @@ class CheckboxTree extends React.Component {
         model.deserializeLists({
             checked: props.checked,
             expanded: props.expanded,
+            loading: props.loading
         });
 
         this.state = {
@@ -130,6 +134,7 @@ class CheckboxTree extends React.Component {
         model.deserializeLists({
             checked: newProps.checked,
             expanded: newProps.expanded,
+            loading: newProps.loading
         });
 
         return newState;
@@ -256,7 +261,6 @@ class CheckboxTree extends React.Component {
 
             return (
                 <TreeNode
-                    nodes={nodes}   // New add data
                     key={key}
                     checked={flatNode.checkState}
                     className={node.className}
@@ -264,12 +268,13 @@ class CheckboxTree extends React.Component {
                     expandDisabled={expandDisabled}
                     expandOnClick={expandOnClick}
                     expanded={flatNode.expanded}
+                    loading={flatNode.loading}
                     icon={node.icon}
                     icons={this.combineMemorized(defaultIcons, icons)}
                     isLeaf={flatNode.isLeaf}
                     isParent={flatNode.isParent}
                     label={node.label}
-                    isSelected={!!node.isSelected} // New add data
+                    description={node.description}
                     lang={lang}
                     optimisticToggle={optimisticToggle}
                     showCheckbox={showCheckbox}
@@ -285,7 +290,7 @@ class CheckboxTree extends React.Component {
                 </TreeNode>
             );
         });
-        
+
         return (
             <ol>
                 {treeNodes}
